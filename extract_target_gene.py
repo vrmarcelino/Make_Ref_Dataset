@@ -28,13 +28,16 @@ gene_name = str(sys.argv[2])
 store_records = []
 
 for seq_record in SeqIO.parse(input_reference_data , "genbank"):
-    for gene in seq_record.features:
-        if gene.type == 'gene':
-            if gene_name in gene.qualifiers['gene']:
-                trimmed_record = gene.extract(seq_record.seq)
+    for i, feature in enumerate(seq_record.features):
+        if feature.type == 'gene':
+            query_gene = str(feature.qualifiers.get('gene', ))
+            
+            if gene_name in query_gene:
+                trimmed_record = feature.extract(seq_record.seq)
                 seq_record.seq = trimmed_record
                 store_records.append (seq_record)
-    
+
+
 counter = SeqIO.write(store_records, "amplicon_dataset.gb", "genbank")
 
 print "Done! %i records saved in your dataset - 'amplicon_dataset.gb'" %(counter)
