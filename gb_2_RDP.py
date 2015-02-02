@@ -25,7 +25,7 @@ if len(sys.argv) == 1:
     print ""
     print "Takes a genbank dataset file and produces the 2 files needed for RDP classifier"
     print ""
-    print "Usage: gb_2_RDP.py amplicon_dataset.gb"
+    print "Usage: gb_2_RDP.py amplicon_dataset_unique_records.gb"
     print ""
     print ""
     sys.exit()
