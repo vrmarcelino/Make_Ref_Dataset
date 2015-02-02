@@ -9,7 +9,7 @@
 echo "Launching....."
 
 echo "extracting genes"
-extract_target_gene.py tufA_Full_GenBank.gb tufA
+extract_target_gene.py Ulvophceae_GenBank.gb tufA
 
 echo "cleaning dataset - del repetitive entries"
 del_repetitive_species_gb.py amplicon_dataset.gb
