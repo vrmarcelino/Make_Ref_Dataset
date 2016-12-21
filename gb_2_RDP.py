@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 
 '''
-Files needed for RDP classifier:
-Create files 2 files from a genbank reference dataset:
+This script creates 2 files from a genbank reference dataset:
 RDP requires a fASTA file of reference sequences and a taxonomy file that maps IDs of the reference seqs to a taxonomic hierarchy
 eg. file 1 (reference_sequences_RDP): 
 KC191578 aaagaacata ttttact....
 file 2 (id_to_taxonomy_map)
 HE600176    d_Eukaryota;k_Viridiplantae;p_Chlorophyta;c_Ulvophyceae;o_Ulvales;f_Ulvaceae;g_Ulva;s_Ulva_californica
 
-WARNING: The classification (into domain/kingdom/class/etc) depends of the order and number of taxonomic ranks defined in the genbank record. 
+Note: The classification (into domain/kingdom/class/etc) depends of the order and number of taxonomic ranks defined in the genbank record. 
+
 Updated: 02 - Feb - 2015
+VRMarcelino
 '''
 
 from Bio import SeqIO
@@ -23,7 +24,7 @@ import sys
 #help
 if len(sys.argv) == 1:
     print ""
-    print "Takes a genbank dataset file and produces the 2 files needed for RDP classifier"
+    print "Takes a genbank dataset file as input and produces the 2 files needed for RDP classifier"
     print ""
     print "Usage: gb_2_RDP.py amplicon_dataset_unique_records.gb"
     print ""
